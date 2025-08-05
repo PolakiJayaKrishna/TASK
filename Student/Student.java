@@ -39,7 +39,6 @@ class Student {
         this.marks = marks;
     }
 
-    // toString method for easy printing
     @Override
     public String toString() {
         return "Student{" +
@@ -65,7 +64,7 @@ class StudentManagementSystem {
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -89,13 +88,12 @@ class StudentManagementSystem {
         }
     }
 
-    // Add a new student
+
     private static void addStudent() {
         System.out.print("Enter Student ID: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
-        // Check if ID already exists
         if (findStudentIndex(id) != -1) {
             System.out.println("Student with this ID already exists!");
             return;
@@ -112,7 +110,6 @@ class StudentManagementSystem {
         System.out.println("Student added successfully!");
     }
 
-    // View all students
     private static void viewStudents() {
         if (students.isEmpty()) {
             System.out.println("No students found.");
@@ -125,11 +122,10 @@ class StudentManagementSystem {
         }
     }
 
-    // Update an existing student
     private static void updateStudent() {
         System.out.print("Enter Student ID to update: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
 
         int index = findStudentIndex(id);
         if (index == -1) {
@@ -146,7 +142,7 @@ class StudentManagementSystem {
         System.out.print("Enter your choice: ");
 
         int updateChoice = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
         switch (updateChoice) {
             case 1:
@@ -167,11 +163,10 @@ class StudentManagementSystem {
         System.out.println("Student updated successfully!");
     }
 
-    // Delete a student
     private static void deleteStudent() {
         System.out.print("Enter Student ID to delete: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
 
         int index = findStudentIndex(id);
         if (index == -1) {
@@ -183,7 +178,6 @@ class StudentManagementSystem {
         System.out.println("Student deleted successfully!");
     }
 
-    // Helper method to find student index by ID
     private static int findStudentIndex(int id) {
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getId() == id) {
